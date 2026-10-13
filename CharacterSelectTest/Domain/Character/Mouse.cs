@@ -5,6 +5,18 @@ namespace CharacterSelectTest.Domain.Character;
 
 public sealed class Mouse : Entity.Character
 {
+    /*************************************************************************
+     * funkcja: Mouse
+     *
+     * opis:
+     * Tworzy nową postać klasy Mouse.
+     *
+     * parametry:
+     * name, string, nazwa myszy
+     *
+     * zwraca:
+     * brak
+     *************************************************************************/
     public Mouse(string name) : base(name, CharacterClass.Mouse)
     {
         Health = 20;
@@ -14,20 +26,22 @@ public sealed class Mouse : Entity.Character
         Speed = 20;
         Cutie = 8;
     }
-}
-public int Hiding(int CaveDigging)
-    {
-        return Hiding * CaveDigging;
-    }
+
     /*************************************************************************
-     * funkcja: ukrywanie się
+     * funkcja: Attack
      *
      * opis:
-     * ukrywa się w małych norkach
+     * Oblicza wartość ataku postaci Mouse na podstawie jej inteligencji.
      *
      * parametry:
-     * kiedy widzi przeciwnika to chowa sie w norkach i wyskakuje,kiedy jest gotowa do ataku
+     * brak
      *
      * zwraca:
-     * int,slabe miejsca innych przeciwnikow
+     * int, wartość ataku obliczona jako Intelligence * 3
      *************************************************************************/
+    public int Attack()
+    {
+        return Intelligence * 3;
+    }
+}
+

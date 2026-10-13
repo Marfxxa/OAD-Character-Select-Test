@@ -5,6 +5,18 @@ namespace CharacterSelectTest.Domain.Character;
 
 public sealed class Shark : Entity.Character
 {
+    /*************************************************************************
+     * funkcja: Shark
+     *
+     * opis:
+     * Tworzy nową postać klasy Shark.
+     *
+     * parametry:
+     * name, string, nazwa rekina
+     *
+     * zwraca:
+     * brak
+     *************************************************************************/
     public Shark(string name) : base(name, CharacterClass.Shark)
     {
         Health = 20;
@@ -14,20 +26,22 @@ public sealed class Shark : Entity.Character
         Speed = 20;
         Cutie = 2;
     }
-}
-    public int Biting(int swimming)
-    {
-        return Biting * swimming;
-    }
+
     /*************************************************************************
-     * funkcja: plywanie
+     * funkcja: Attack
      *
      * opis:
-     * wyskakuje z wody i gryzie
+     * Oblicza wartość ataku postaci Shark na podstawie jej siły.
      *
      * parametry:
-     * kiedy widzi wroga w wodzie gryzie go
+     * brak
      *
      * zwraca:
-     * int, kosci innych wrogow
+     * int, wartość ataku obliczona jako Strength * 3
      *************************************************************************/
+    public int Attack()
+    {
+        return Strength * 3;
+    }
+}
+
